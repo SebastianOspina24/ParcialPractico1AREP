@@ -6,6 +6,7 @@ public class Clima {
 
         String outputLine = 
           "<!DOCTYPE html>" + 
+          getCoder()+
           "<html>" + 
           "<head>" + 
           "<meta charset=\"UTF-8\">" + 
@@ -16,5 +17,15 @@ public class Clima {
           "</body>" + 
           "</html>"; 
         return outputLine;
+    }
+
+    public static String getCoder(){
+        return "<script>let url = \"https://parcialarepno1.herokuapp.com/consulta?lugar=\""+
+        "function consumirapi(){"+
+        "fetch(url+document.getElementById(\"valor\").value"+
+       "  .then(response => response.json())"+
+          ".then(data => {"+
+            "document.getElementById(\"city\").innerHTML = data.name"+
+            "document.getElementById(\"tempe\").innerHTML = data.temp})}</script>";
     }
 }
