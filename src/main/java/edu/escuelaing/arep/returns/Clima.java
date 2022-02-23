@@ -51,10 +51,10 @@ public class Clima {
     public static String getCoder() {
         return "<script type=\"text/javascript\">let url = \"https://parcialarepno1.herokuapp.com/consulta?lugar=\"\n" +
                 "function consumirapi(){\n" +
-                "fetch(url+document.getElementById(\"nombre\")\n" +
+                "fetch(url+document.getElementById(\"nombre\").value)\n" +
                 "  .then(response => response.json())\n" +
                 ".then(data => {\n" +
                 "document.getElementById(\"city\").innerHTML = data.name\n" +
-                "document.getElementById(\"tempe\").innerHTML = data.temp\n}))\n}\n</script>\n";
+                "document.getElementById(\"tempe\").innerHTML = data.temp\n})\n}\n</script>\n";
     }
 }
