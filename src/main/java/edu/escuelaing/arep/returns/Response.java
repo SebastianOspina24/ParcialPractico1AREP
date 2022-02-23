@@ -50,10 +50,15 @@ private static void consulta(Socket clienteSocket,String url) throws IOException
     con.getResponseCode();
     PrintWriter out = new PrintWriter(
         clienteSocket.getOutputStream(), true);
-        BufferedInputStream temp = new BufferedInputStream(con.getInputStream());
-    System.out.print(temp);
     out.print("HTTP/1.1 200 OK\r\n Content-Type: text/json \r\n\r\n");
-    out.print(temp);
+    BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line+"\n");
+                }
+                br.close();
+    out.print(sb);
     out.close();
 }
 
