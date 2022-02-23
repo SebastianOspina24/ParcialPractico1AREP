@@ -55,6 +55,6 @@ public class Clima {
                 "  .then(response => response.json())\n" +
                 ".then(data => {\n" +
                 "document.getElementById(\"city\").innerHTML = data.name\n" +
-                "document.getElementById(\"tempe\").innerHTML = data.temp\n})\n}\n</script>\n";
+                "document.getElementById(\"tempe\").innerHTML = data.main.temp\n})\n}\n</script>\n";
     }
 }
